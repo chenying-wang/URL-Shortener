@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="world.wcy.UrlMap" table="urlmap">
+        <id name="id" column="id" type="java.lang.Long">
+            <generator class="native" />
+        </id>
+        <property name="longUrl" column="long_url" type="java.lang.String" />
+        <property name="shortUrl" column="short_url" type="java.lang.String" />
+    </class>
+</hibernate-mapping>
