@@ -14,7 +14,9 @@
 
     <bean id="urlAction" class="world.wcy.UrlAction" scope="prototype" />
 
-    <bean id="urlService" class="world.wcy.UrlService" />
+    <bean id="urlService" class="world.wcy.UrlService">
+        <property name="urlRoot" value="" />
+    </bean>
 
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
         <property name="driverClass" value="com.mysql.jdbc.Driver" />

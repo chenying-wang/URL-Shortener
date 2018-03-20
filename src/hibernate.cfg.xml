@@ -6,7 +6,7 @@
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.hbm2ddl.auto">update</property>
-        <property name="hibernate.dialect">org.hibernate.dialect.MySQL57Dialect</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
 
         <mapping resource="world/wcy/urlmap.hbm.xml" />
     </session-factory>

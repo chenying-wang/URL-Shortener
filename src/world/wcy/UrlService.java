@@ -9,7 +9,6 @@ import java.util.ArrayList;
 @Transactional
 public class UrlService {
 
-    private static final String URL_ROOT= "https://wcy.world";
     private static final int SUFFIX_LENGTH = 5;
 
     private static ArrayList<Character> CHAR_POOL;
@@ -32,6 +31,15 @@ public class UrlService {
 
     @Autowired
     private UrlDao dao;
+    private String urlRoot;
+
+    public String getUrlRoot() {
+        return urlRoot;
+    }
+
+    public void setUrlRoot(String urlRoot) {
+        this.urlRoot = urlRoot;
+    }
 
     public String shorten(String longUrl) throws InvalidUrlException {
 
@@ -52,7 +60,7 @@ public class UrlService {
     }
 
     public String redirect(String id) {
-        return restore(URL_ROOT + id);
+        return restore(urlRoot + id);
     }
 
     private boolean checkUrlValidity (String url) {
@@ -68,7 +76,7 @@ public class UrlService {
     }
 
     private String getRandomShortUrl(int length) {
-        StringBuilder randomString = new StringBuilder(URL_ROOT);
+        StringBuilder randomString = new StringBuilder(urlRoot);
         for(int i = 0, rand; i < length; ++i) {
             rand = (int) Math.floor(Math.random() * CHAR_POOL_LENGTH);
             randomString.append(CHAR_POOL.get(rand));
